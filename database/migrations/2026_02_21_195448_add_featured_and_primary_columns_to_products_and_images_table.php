@@ -10,24 +10,19 @@ return new class extends Migration
      * Run the migrations.
      */
     public function up(): void
-    {
+{
+    // Cek dulu apakah tabel products sudah ada
+    if (Schema::hasTable('products')) {
         Schema::table('products', function (Blueprint $table) {
             $table->boolean('is_featured')->default(false)->after('slug');
         });
-
+    }
+    
+    // Cek dulu apakah tabel product_images sudah ada
+    if (Schema::hasTable('product_images')) {
         Schema::table('product_images', function (Blueprint $table) {
             $table->boolean('is_primary')->default(false)->after('image_path');
         });
     }
-
-    public function down(): void
-    {
-        Schema::table('products', function (Blueprint $table) {
-            $table->dropColumn('is_featured');
-        });
-
-        Schema::table('product_images', function (Blueprint $table) {
-            $table->dropColumn('is_primary');
-        });
-    }
+}
 };
