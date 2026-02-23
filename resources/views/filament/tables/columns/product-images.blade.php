@@ -4,7 +4,7 @@
     $images = $record->images;
 @endphp
 
-<div class="flex flex-wrap gap-2 py-2 min-w-[200px]">
+<div class="flex flex-wrap gap-2 py-2">
     @forelse($images->take(3) as $image)
         @php
             $imageUrl = null;

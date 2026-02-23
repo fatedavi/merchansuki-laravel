@@ -29,7 +29,7 @@ class CategoryResource extends Resource
             ->schema([
                 Forms\Components\Section::make('Category Detail')
                     ->schema([
-                        Forms\Components\Grid::make(2)
+                        Forms\Components\Grid::make(['default' => 1, 'sm' => 2])
                             ->schema([
                                 Forms\Components\TextInput::make('name')
                                     ->required()

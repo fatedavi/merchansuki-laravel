@@ -2,7 +2,7 @@
     $record = $getRecord();
 @endphp
 
-<div class="flex flex-col gap-0.5 py-1.5 px-1 min-w-[200px]">
+<div class="flex flex-col gap-0.5 py-1.5 px-1">
     <!-- Nama Product dan Info -->
     <div class="flex items-center gap-1">
         <span class="font-medium text-gray-900 dark:text-white text-xs truncate" title="{{ $record->name }}">

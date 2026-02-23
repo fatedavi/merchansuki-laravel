@@ -22,7 +22,7 @@ class UserResource extends Resource
         return $form->schema([
             Forms\Components\Section::make('Account Information')
                 ->schema([
-                    Forms\Components\Grid::make(2)->schema([
+                    Forms\Components\Grid::make(['default' => 1, 'sm' => 2])->schema([
                         Forms\Components\TextInput::make('name')
                             ->required()
                             ->maxLength(255),
@@ -32,7 +32,7 @@ class UserResource extends Resource
                             ->unique(ignoreRecord: true)
                             ->maxLength(255),
                     ]),
-                    Forms\Components\Grid::make(2)->schema([
+                    Forms\Components\Grid::make(['default' => 1, 'sm' => 2])->schema([
                         Forms\Components\Select::make('role')
                             ->options([
                                 'admin' => 'Admin',

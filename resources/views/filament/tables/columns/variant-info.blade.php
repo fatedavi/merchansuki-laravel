@@ -6,7 +6,7 @@
         ?? $getRecord()->images->first()?->image_path;
 @endphp
 
-<div class="flex flex-col min-w-[400px] max-w-lg divide-y divide-gray-100 dark:divide-gray-800">
+<div class="flex flex-col max-w-lg divide-y divide-gray-100 dark:divide-gray-800">
     @forelse($variants->take(3) as $variant)
         @php
             $image = $variant->image ?? $primaryImage;

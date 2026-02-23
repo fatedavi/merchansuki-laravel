@@ -32,7 +32,7 @@ class ProductResource extends Resource
             ->schema([
                 Forms\Components\Section::make('Product Detail')
                     ->schema([
-                        Forms\Components\Grid::make(2)
+                        Forms\Components\Grid::make(['default' => 1, 'sm' => 2])
                             ->schema([
                                 Forms\Components\Select::make('category_id')
                                     ->relationship('category', 'name')
@@ -139,25 +139,21 @@ class ProductResource extends Resource
                 Tables\Columns\ViewColumn::make('variant_imgs')
                     ->label('VAR IMAGE')
                     ->view('filament.tables.columns.variant-images')
-                    ->width('80px')
                     ->toggleable(),
 
                 Tables\Columns\ViewColumn::make('variant_names')
                     ->label('VAR NAME')
                     ->view('filament.tables.columns.variant-names')
-                    ->width('280px')
                     ->toggleable(),
 
                 Tables\Columns\ViewColumn::make('variant_stocks')
                     ->label('STOCK')
                     ->view('filament.tables.columns.variant-stocks')
-                    ->width('120px')
                     ->toggleable(),
 
                 Tables\Columns\ViewColumn::make('variant_prices')
                     ->label('PRICE')
                     ->view('filament.tables.columns.variant-prices')
-                    ->width('180px')
                     ->toggleable(),
 
                 Tables\Columns\TextColumn::make('category.name')
